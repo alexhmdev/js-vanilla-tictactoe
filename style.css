@@ -10,8 +10,8 @@ body {
 }
 main {
   display: grid;
-  justify-content: center;
   align-content: center;
+  justify-content: center;
   height: 100vh;
 }
 
@@ -24,7 +24,8 @@ card {
   background: var(--border-color);
   padding: 5px;
   border-radius: 10px;
-  width: 300px;
+  aspect-ratio: 1/1;
+  width: 350px;
   display: flex;
   align-content: center;
   position: relative;
@@ -32,17 +33,22 @@ card {
 
 card-body {
   background-color: var(--card-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   height: 100%;
+  width: 100%;
   border-radius: 10px;
 }
 
 .tictactoe {
   display: grid;
-  grid-template-columns: repeat(3, 100px);
+  grid-template-columns: repeat(3, 0fr);
 }
 
 .tictactoe > div {
   text-align: center;
+  width: 100px;
   height: 100px;
   line-height: 80px;
   color: white;
@@ -63,4 +69,30 @@ card-body {
 
 .border-bottom {
   border-bottom: 1px solid white;
+}
+
+@media only screen and (max-width: 980px) {
+  .tictactoe > div {
+    width: 250px;
+    height: 250px;
+    line-height: 250px;
+    font-size: 200px;
+  }
+
+  card {
+    width: 800px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .tictactoe > div {
+    width: 60px;
+    height: 60px;
+    line-height: 50px;
+    font-size: 20px;
+  }
+
+  card {
+    width: 200px;
+  }
 }
